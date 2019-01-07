@@ -6,7 +6,23 @@
         xmlns:local="clr-namespace:qltest2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,0,-67">
+        <Button Content="Compute Price" HorizontalAlignment="Left" Height="28" Margin="459,28,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click"/>
+        <TextBox x:Name="Resultam" HorizontalAlignment="Left" Height="28" Margin="606,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Text="1"/>
+        <TextBox x:Name="Resultam_Delta" HorizontalAlignment="Left" Height="47" Margin="52,340,0,0" TextWrapping="Wrap" Text="Delta" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="Resultam_Theta" HorizontalAlignment="Left" Height="47" Margin="242,340,0,0" TextWrapping="Wrap" Text="Theta" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.28,0.606"/>
+        <TextBox x:Name="Resultam_Gamma" HorizontalAlignment="Left" Height="47" Margin="422,340,0,0" TextWrapping="Wrap" Text="Gamma" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.306,0.474"/>
+        <TextBox x:Name="Resultam_Vega" HorizontalAlignment="Left" Height="47" Margin="606,340,0,0" TextWrapping="Wrap" Text="Vega" VerticalAlignment="Top" Width="156" RenderTransformOrigin="4.341,0.538"/>
+        <Label HorizontalAlignment="Left" Height="29" Margin="52,306,0,0" VerticalAlignment="Top" Width="129">
+            <Label Content="Delta" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="129" RenderTransformOrigin="1.41,0.426"/>
+        </Label>
+        <Label Content="Theta" HorizontalAlignment="Left" Height="29" Margin="242,306,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="1.401,0.544"/>
+        <Label Content="Gamma" HorizontalAlignment="Left" Height="29" Margin="422,306,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="1.461,0.706"/>
+        <Label Content="Vega" HorizontalAlignment="Left" Height="29" Margin="606,306,0,0" VerticalAlignment="Top" Width="129"/>
+        <Label x:Name="Volatility" Content="Volatility" HorizontalAlignment="Left" Height="29" Margin="606,125,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.462,2.109"/>
+        <Button Content="Compute Vol" HorizontalAlignment="Left" Height="28" Margin="459,90,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click" RenderTransformOrigin="0.493,3.43"/>
+        <Label x:Name="Volatility_Copy" Content="Option Price" HorizontalAlignment="Left" Height="29" Margin="606,61,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.462,2.109"/>
+        <TextBox x:Name="Resultvol" HorizontalAlignment="Left" Height="28" Margin="606,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Text="20"/>
+
     </Grid>
 </Window>
