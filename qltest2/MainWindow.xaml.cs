@@ -56,7 +56,14 @@ namespace qltest2
             Date todaydate = Date.todaysDate();
             string expd = Datepick.Text;
             Date maturityDate = new Date();
-            expd = '0' + expd;
+            if (expd[1].ToString() is "/")
+            {
+                expd = '0' + expd;
+            }
+            if (expd[4].ToString() is "/")
+            {
+                expd = expd.Substring(0,3) + '0' + expd.Substring(3);
+            }
             maturityDate = DateParser.parseFormatted(expd, "%m/%d/%Y");
 
             
@@ -175,7 +182,12 @@ namespace qltest2
             Date todaydate = Date.todaysDate();
             string expd = Datepick.Text;
             Date maturityDate = new Date();
-            expd = '0' + expd;
+            if (expd[1].ToString()  is "/"){
+                expd = '0' + expd; }
+            if (expd[4].ToString() is "/")
+            {
+                expd = expd.Substring(0, 3) + '0' + expd.Substring(3);
+            }
             maturityDate = DateParser.parseFormatted(expd, "%m/%d/%Y");
 
 
@@ -249,8 +261,8 @@ namespace qltest2
             Date divdate1 = new Date(14, Month.January, 2019);
             DoubleVector divpay = new DoubleVector();
             DateVector divDates = new DateVector();
-            divpay.Add(.0001);
-            divDates.Add(divdate1);
+            //divpay.Add(.0001);
+            //divDates.Add(divdate1);
             DividendVanillaOption americanOption1 = new DividendVanillaOption(payoff, americanExercise, divDates, divpay);
 
             FDDividendAmericanEngine engine = new FDDividendAmericanEngine(stochasticProcess);
