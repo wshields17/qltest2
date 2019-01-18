@@ -114,36 +114,36 @@ namespace qltest2
             VanillaOption europeanOption =
                 new VanillaOption(payoff, europeanExercise);
 
-            americanOption.setPricingEngine(
-                             new BaroneAdesiWhaleyEngine(stochasticProcess));
+            //americanOption.setPricingEngine(
+            //                 new BaroneAdesiWhaleyEngine(stochasticProcess));
 
-            americanOption2.setPricingEngine(
-                             new BinomialVanillaEngine(stochasticProcess, "coxrossrubinstein",1000));
+            //americanOption2.setPricingEngine(
+            //                 new BinomialVanillaEngine(stochasticProcess, "coxrossrubinstein",1000));
 
             europeanOption.setPricingEngine(
                               new AnalyticEuropeanEngine(stochasticProcess));
 
-            double opprice = Math.Round(americanOption2.NPV(),3);
+            //double opprice = Math.Round(americanOption2.NPV(),3);
             
             
             
-            Date divdate1 = new Date(14, Month.January, 2019);
+            Date divdate1 = new Date(14, Month.December, 2019);
             DoubleVector divpay = new DoubleVector();
             DateVector divDates = new DateVector();
-            divpay.Add(.0001);
-            divDates.Add(divdate1);
+            //divpay.Add(.0001);
+            //divDates.Add(divdate1);
             DividendVanillaOption americanOption1 = new DividendVanillaOption(payoff, americanExercise, divDates, divpay);
             
             FDDividendAmericanEngine engine = new FDDividendAmericanEngine(stochasticProcess);
             americanOption1.setPricingEngine(engine);
-            double opprice4 = Math.Round(americanOption1.NPV(),3);
-            double vol1 = americanOption1.impliedVolatility(opprice4, stochasticProcess, .01);
-            double delta1 = Math.Round(americanOption2.delta(),2);
-            double gamma1 = Math.Round(americanOption2.gamma(),2);
+            double opprice4 = americanOption1.NPV();
+            //double vol1 = americanOption1.impliedVolatility(opprice4, stochasticProcess, .001);
+            double delta1 = Math.Round(americanOption1.delta(),2);
+            double gamma1 = Math.Round(americanOption1.gamma(),2);
             double theta1 = Math.Round(europeanOption.theta()/365,2);
             double vega1 = Math.Round(europeanOption.vega()/100,2);
-
-            Resultam.Text = opprice4.ToString();
+            double oppricedisplay = Math.Round(opprice4, 3);
+            Resultam.Text = oppricedisplay.ToString();
             Resultam_Delta.Text = delta1.ToString();
             Resultam_Gamma.Text = gamma1.ToString();
             Resultam_Theta.Text = theta1.ToString();
@@ -257,7 +257,7 @@ namespace qltest2
             americanOption1.setPricingEngine(engine);
             //double opprice4 = americanOption1.NPV();
             double Inoprice  = Convert.ToDouble(Resultam.Text);
-            double vol1 = americanOption1.impliedVolatility(Inoprice, stochasticProcess, .01);
+            double vol1 = americanOption1.impliedVolatility(Inoprice, stochasticProcess, .0001);
             vol1 = Math.Round(vol1, 4) * 100;
             double delta1 = Math.Round(americanOption2.delta(), 2);
             double gamma1 = Math.Round(americanOption2.gamma(), 2);
