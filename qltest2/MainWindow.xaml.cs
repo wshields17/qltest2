@@ -28,7 +28,8 @@ namespace qltest2
             DateTime thisday5 = thisDay.AddDays(5.0);
             Datepick.Text = thisday5.ToString();
             System.Net.WebClient wc = new System.Net.WebClient();
-            byte[] raw = wc.DownloadData("https://api.iextrading.com/1.0/stock/qqq/price");
+            string stockname = Stockname.Text; 
+            byte[] raw = wc.DownloadData("https://api.iextrading.com/1.0/stock/" + stockname + "/price");
             string webData = System.Text.Encoding.UTF8.GetString(raw);
             Stockprice.Text = webData;
             double guessstrike = Math.Round(Convert.ToDouble(webData), 0);
@@ -282,6 +283,29 @@ namespace qltest2
             Resultam_Theta.Text = theta1.ToString();
             Resultam_Vega.Text = vega1.ToString();
             Resultvol.Text = vol1.ToString();
+        }
+
+        
+
+        private void Stockname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        
+
+        
+
+        private void KeyDownE(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                System.Net.WebClient wc = new System.Net.WebClient();
+                string stockname = Stockname.Text;
+                byte[] raw = wc.DownloadData("https://api.iextrading.com/1.0/stock/" + stockname + "/price");
+                string webData = System.Text.Encoding.UTF8.GetString(raw);
+                Stockprice.Text = webData;
+            }
         }
     }
 }

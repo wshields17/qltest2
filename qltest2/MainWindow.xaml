@@ -22,17 +22,18 @@
         <Label x:Name="Volatility" Content="Volatility" HorizontalAlignment="Left" Height="29" Margin="606,125,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.462,2.109"/>
         <Label x:Name="Volatility_Copy" Content="Option Price" HorizontalAlignment="Left" Height="29" Margin="606,61,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.462,2.109"/>
         <TextBox x:Name="Resultvol" HorizontalAlignment="Left" Height="28" Margin="606,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Text="20"/>
-        <TextBox x:Name="Stockprice" HorizontalAlignment="Left" Height="47" Margin="52,28,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="156"/>
-        <TextBox x:Name="Strikeprice" HorizontalAlignment="Left" Height="47" Margin="52,95,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.519,-2.938"/>
+        <TextBox x:Name="Stockprice" HorizontalAlignment="Left" Height="27" Margin="52,63,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="Strikeprice" HorizontalAlignment="Left" Height="26" Margin="52,116,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.519,-2.938"/>
         <TextBox x:Name="Intrate" HorizontalAlignment="Left" Height="33" Margin="52,166,0,0" TextWrapping="Wrap" Text=".02" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="CallorPut" HorizontalAlignment="Left" Height="30" Margin="52,219,0,0" TextWrapping="Wrap" Text="Call" VerticalAlignment="Top" Width="156"/>
         <DatePicker x:Name="Datepick" HorizontalAlignment="Left" Margin="52,277,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.55,-1.145" Text="Exp" Width="156"/>
         <Button x:Name="Volbutton" Content="Compute Vol" HorizontalAlignment="Left" Height="24" Margin="459,95,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_1"/>
-        <Label Content="Stock Price" HorizontalAlignment="Left" Margin="230,37,0,0" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Strike" HorizontalAlignment="Left" Margin="230,107,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Stock Price" HorizontalAlignment="Left" Margin="230,64,0,0" VerticalAlignment="Top" Width="84"/>
+        <Label Content="Strike" HorizontalAlignment="Left" Margin="230,116,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Interest Rate" HorizontalAlignment="Left" Margin="230,173,0,0" VerticalAlignment="Top" Width="84"/>
         <Label Content="Call or Put" HorizontalAlignment="Left" Margin="230,223,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.506,2.189"/>
         <Label Content="Exp Date" HorizontalAlignment="Left" Margin="230,275,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.506,2.189"/>
+        <TextBox x:Name="Stockname" HorizontalAlignment="Left" Height="27" Margin="52,14,0,0" TextWrapping="Wrap" Text="qqq" VerticalAlignment="Top" Width="156" TextChanged="Stockname_TextChanged" KeyDown="KeyDownE"/>
 
     </Grid>
 </Window>
