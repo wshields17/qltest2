@@ -131,7 +131,7 @@ namespace qltest2
             europeanOption.setPricingEngine(
                               new AnalyticEuropeanEngine(stochasticProcess));
 
-            //double opprice = Math.Round(americanOption2.NPV(),3);
+            
             
             
             
