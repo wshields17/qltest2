@@ -305,6 +305,8 @@ namespace qltest2
                 byte[] raw = wc.DownloadData("https://api.iextrading.com/1.0/stock/" + stockname + "/price");
                 string webData = System.Text.Encoding.UTF8.GetString(raw);
                 Stockprice.Text = webData;
+                double guessstrike = Math.Round(Convert.ToDouble(webData), 0);
+                Strikeprice.Text = guessstrike.ToString();
             }
         }
     }
